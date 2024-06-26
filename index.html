@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mailantarki Care Football Club</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="MailantarkiLogo.jpg" alt="Mailantarki Care Football Club Logo">
+        </div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#teams">Teams</a></li>
+                <li><a href="#players">Players</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger" id="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Welcome to Mailantarki Care F.C</h1>
+            <div class="hero-buttons">
+                <a href="#join" class="btn-yellow">Join Us</a>
+                <a href="#learn-more" class="btn-blue">Learn More</a>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = [
+                'image1.jpg',
+                'image2.jpg',
+                'image3.jpg',
+                'image4.jpg'
+            ];
+            let currentIndex = 0;
+            const heroSection = document.getElementById('hero');
+    
+            function changeBackgroundImage() {
+                heroSection.style.backgroundImage = `url('images/${images[currentIndex]}')`;
+                currentIndex = (currentIndex + 1) % images.length;
+            }
+    
+            // Initially set the first background image
+            changeBackgroundImage();
+    
+            // Change background image every 5 seconds
+            setInterval(changeBackgroundImage, 5000);
+        });
+    </script>
+
+<section id="news">
+    <h2>News</h2>
+    <div class="news-content">
+        <p>Mailantarki Care Football Club is dedicated to fostering young talent and promoting the sport of football in our community. Established in [Year], we have a proud history of competitive success and community involvement.</p>
+        <p>Our mission is to develop well-rounded athletes who excel both on and off the field.</p>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const paragraphs = document.querySelectorAll('.news-content p');
+        
+        paragraphs.forEach(paragraph => {
+            paragraph.addEventListener('mouseover', () => {
+                paragraph.style.backgroundColor = '#f0f0f0';
+            });
+            
+            paragraph.addEventListener('mouseout', () => {
+                paragraph.style.backgroundColor = 'transparent';
+            });
+        });
+    });
+</script>
+
+
+    <section id="teams">
+        <h2>Our Teams</h2>
+        <div class="team-cards">
+            <div class="card">
+                <h3>Senior Team</h3>
+                <p>The senior team competes at the highest levels and includes some of the best talents in the region.</p>
+            </div>
+            <div class="card">
+                <h3>Youth Academy</h3>
+                <p>The Youth Academy nurtures the youngest players with a focus on skill development and love for the game.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="players">
+        <h2>Match players</h2>
+        <div class="players-content">
+            <ul>
+                <li>June 30, 2024 - Mailantarki vs Doma United</li>
+                <li>July 15, 2024 - Mailantarki vs Gombe United</li>
+                <li>August 5, 2024 - Mailantarki vs Yarmalight F.C</li>
+                <li>August 20, 2024 - Mailantarki vs Team D</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-content">
+            <div class="gallery-item"><img src="gallery1.jpg" alt="Gallery Image 1"></div>
+            <div class="gallery-item"><img src="gallery2.jpg" alt="Gallery Image 2"></div>
+            <div class="gallery-item"><img src="gallery3.jpg" alt="Gallery Image 3"></div>
+            <div class="gallery-item"><img src="gallery4.jpg" alt="Gallery Image 4"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-content">
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit" class="btn-yellow">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Club President</a></li>
+            </div>
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><img src="facebook-icon.png.png" alt="Facebook"></a></li>
+                    <li><a href="#"><img src="twitter-icon.png.png" alt="Twitter"></a></li>
+                    <li><a href="#"><img src="instagram-icon.png.png" alt="Instagram"></a></li>
+                    <li><a href="#"><img src="youtube-icon.png.png" alt="YouTube"></a></li>
+                </ul>
+            </div>
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Address: 123 Jabi, Abuja, Nigeria</p>
+                <p>Phone: +234 704 1146 226</p>
+                <p>Email: info@mailantarki.com</p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

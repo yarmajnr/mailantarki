@@ -1,0 +1,426 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #3725B9;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8x;
+    background-color: #3725B9;
+    color: white;
+}
+
+header .logo img {
+    width: 150px;
+    transition: transform 0.3s ease;
+}
+
+header .logo img:hover {
+    transform: scale(1.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #FFD700;
+    color: #3725B9;
+    border-radius: 5px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+#hero {
+    position: relative;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeInDown 2s;
+    color: rgb(6, 52, 177);
+}
+
+.hero-buttons .btn-yellow, .hero-buttons .btn-blue {
+    padding: 10px 20px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Modern Hero Buttons */
+.hero-buttons .btn-yellow, .hero-buttons .btn-blue {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-buttons .btn-yellow {
+    background-color: #FFD700;
+    color: #3725B9;
+}
+
+.hero-buttons .btn-blue {
+    background-color: #3725B9;
+    color: #FFD700;
+}
+
+.hero-buttons .btn-yellow:hover, .hero-buttons .btn-blue:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-buttons .btn-yellow:focus, .hero-buttons .btn-blue:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.4);
+}
+
+/* News section */
+#news {
+    background-color: #ffffff;
+    color: #3725B9;
+    padding: 50px 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 0 auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#news h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #FFD700;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+#news h2::after {
+    content: '';
+    width: 50%;
+    height: 3px;
+    background-color: #FFD700;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+}
+
+.news-content {
+    margin-top: 20px;
+}
+
+.news-content p {
+    margin: 20px 0;
+    line-height: 1.8;
+    font-size: 18px;
+    color: #555;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.news-content p:hover {
+    color: #3725B9;
+}
+
+/* Add animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#news {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Hover effect */
+#news:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Optimization */
+@media (max-width: 600px) {
+    #news {
+        padding: 30px 10px;
+    }
+
+    .news-content p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    #news h2 {
+        font-size: 2rem;
+    }
+}
+
+
+/* Teams Section */
+#teams {
+    background-color: #f9f9f9;
+    color: #3725B9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.team-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-cards .card {
+    background: white;
+    margin: 10px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-cards .card:hover {
+    transform: scale(1.05);
+}
+
+/* players Section */
+#players {
+    background-color: #ffffff;
+    color: #3725B9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.players-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.players-content ul li {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Gallery Section */
+#gallery {
+    background-color: #f9f9f9;
+    color: #3725B9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.gallery-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+#contact {
+    background-color: #f9f9f9;
+    color: #3725B9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-content form label {
+    margin: 10px 0 5px;
+    text-align: left;
+    width: 100%;
+    max-width: 400px;
+}
+
+.contact-content form input, .contact-content form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.contact-content form button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #FFD700;
+    color: #3725B9;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.contact-content form button:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background-color: #fbff00;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-content .quick-links ul,
+.footer-content .social-media ul,
+.footer-content .contact-info p {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-content .quick-links ul li,
+.footer-content .social-media ul li {
+    margin: 5px 0;
+}
+
+.footer-content .social-media ul {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content .social-media ul li img {
+    width: 30px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-content .social-media ul li img:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.nav-active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
