@@ -295,22 +295,6 @@ nav ul li a:hover {
 }
 
 
-.view-profile-btn {
-    display: block;
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: #3725B9; /* Blue background for button */
-    color: #fff; /* White text color for button */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.view-profile-btn:hover {
-    background-color: #3725B9; /* Darker blue for hover state */
-}
-
 /* Modal */
 .modal {
     display: none;
@@ -359,77 +343,172 @@ nav ul li a:hover {
     }
 }
 
-/* Gallery Section */
 #gallery {
     background-color: #f9f9f9;
-    color: #3725B9;
-    padding: 50px 20px;
+    padding: 50px 0;
     text-align: center;
+}
+
+#gallery h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #003366;
 }
 
 .gallery-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .gallery-item {
     margin: 10px;
+    position: relative;
+    cursor: pointer;
     transition: transform 0.3s ease;
-}
-
-.gallery-item img {
-    width: 100%;
-    border-radius: 10px;
 }
 
 .gallery-item:hover {
     transform: scale(1.05);
 }
 
+.gallery-item img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+.caption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #003366;
+}
+
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+#lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border: 5px solid #fff;
+    border-radius: 10px;
+}
+
+#lightbox-caption {
+    color: white;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+
+/* Contact Section */
 /* Contact Section */
 #contact {
-    background-color: #f9f9f9;
-    color: #3725B9;
-    padding: 50px 20px;
+    background-color: #003366;
+    color: white;
+    padding: 50px 0;
     text-align: center;
 }
 
-.contact-content form {
+#contact h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #FFD700;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.envelope {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
-.contact-content form label {
-    margin: 10px 0 5px;
-    text-align: left;
+.form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #003366;
+}
+
+.contact-form input,
+.contact-form textarea {
     width: 100%;
-    max-width: 400px;
-}
-
-.contact-content form input, .contact-content form textarea {
     padding: 10px;
-    border: 1px solid #ccc;
+    margin-top: 5px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 400px;
+    outline: none;
+    transition: border-color 0.3s;
 }
 
-.contact-content form button {
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #FFD700;
+}
+
+.contact-form button {
     padding: 10px 20px;
     border: none;
-    cursor: pointer;
     background-color: #FFD700;
-    color: #3725B9;
-    font-weight: bold;
+    color: #003366;
+    cursor: pointer;
+    border-radius: 5px;
     transition: transform 0.3s ease;
+    font-weight: bold;
 }
 
-.contact-content form button:hover {
-    transform: scale(1.1);
+.contact-form button:hover {
+    transform: scale(1.05);
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .envelope {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: calc(100% - 20px);
+    }
+}
+
 
 /* Footer */
 footer {
