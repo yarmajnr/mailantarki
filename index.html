@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mailantarki Care Football Club</title>
     <link rel="stylesheet" href="styles.css">
@@ -73,23 +74,23 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const newsData = [
-            {
-                "title": "Title of the First News Article",
-                "description": "Brief description of the first news article...",
-                "image": "https://github.com/yarmajnr/mailantarki/blob/main/IMG-20230816-WA0027.jpg?raw=true",
-                "link": "link-to-full-article1.html"
+        {
+    "title": "From Local Heroes to Global Stars: Mailantarki Care FC's Unprecedented Success",
+    "description": "In just one year of its existence, the ‘Mailantarki Care Football Club’ has transferred a total of 13 young and talented Nigerian players to various European clubs to continue their careers in football. Discover the inspiring journey of these rising stars.",
+    "image": "https://github.com/yarmajnr/mailantarki/blob/main/IMG-20230816-WA0027.jpg?raw=true",
+    "link": "article1.html"
             },
             {
                 "title": "Title of the Second News Article",
                 "description": "Brief description of the second news article...",
                 "image": "https://github.com/yarmajnr/mailantarki/blob/main/IMG-20230816-WA0028.jpg?raw=true",
-                "link": "link-to-full-article2.html"
+                "link": "article2.html"
             },
             {
-                "title": "Title of the Third News Article",
-                "description": "Brief description of the third news article...",
+                "title": "Mailantarki Care FC Wins 2022 Dana Cup",
+                "description": "The Mailantarki Care FC emerged as the champions of the 2022 Dana Cup International Youth Championship in Denmark. The Mailantarki lads were the only Nigerian club in that year’s Dana Cup and they produced an all-round unbeaten performance across their fixtures, scoring a record 40 goals. Emmanuel Micheal Papo scored the lone goal against Vibar FK of Norway in the final game at Nord Energy Arena Hjørring. Top performers included Miko Dalha, Abdulazeez Maiyadi, Auwal Abba, and young playmaker Ibrahim Sani. The team was expected in Oslo for the high-profile Norway Cup 2022.",
                 "image": "https://github.com/yarmajnr/mailantarki/blob/main/IMG-20231117-WA0160.jpg?raw=true",
-                "link": "link-to-full-article3.html"
+                "link": "article3.html"
             }
         ];
 
@@ -110,7 +111,9 @@
             newsTitle.textContent = news.title;
             
             const newsParagraph = document.createElement('p');
-            newsParagraph.textContent = news.description;
+            const maxLength = 200; // Approx. length for 6 lines
+            const truncatedDescription = news.description.length > maxLength ? news.description.substring(0, maxLength) + '... ' : news.description;
+            newsParagraph.textContent = truncatedDescription;
             
             const readMoreLink = document.createElement('a');
             readMoreLink.href = news.link;
@@ -153,7 +156,7 @@
             <div class="player-list">
                 <div class="player-card" data-details="Age: 50 | Country: Nigeria">
                     <img src="coach.jpg" alt="Sulaiman Kalala">
-                    <h4>Sulaiman Kalala</h4>
+                    <h4>Labaran Nura Babisco</h4>
                     <p>
                         <img src="naija.png" alt="Spain" class="country-icon"> Nigeria
                     </p>
@@ -361,8 +364,18 @@
                 <p class="caption">Caption for Gallery Image 4</p>
             </div>
         </div>
+    </section>
+    
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Lightbox Image">
+        <p id="lightbox-caption">Caption for Lightbox Image</p>
+        <div class="lightbox-controls">
+            <button id="prev-btn">&laquo;</button>
+            <button id="next-btn">&raquo;</button>
+        </div>
+    </div>
         <script>
-            document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
     // Burger Menu Toggle
     const burger = document.getElementById('burger');
     const navList = document.getElementById('nav-list');
@@ -423,19 +436,56 @@
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.getElementById('lightbox-caption');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
 
-    galleryItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            lightboxImg.src = e.target.src;
-            lightboxCaption.textContent = e.target.nextElementSibling.textContent;
-            lightbox.classList.add('active');
+    let currentIndex = 0;
+
+    const showImage = (index) => {
+        lightboxImg.src = galleryItems[index].src;
+        lightboxCaption.textContent = galleryItems[index].nextElementSibling.textContent;
+        lightbox.classList.add('active');
+        currentIndex = index;
+    };
+
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            showImage(index);
         });
     });
 
-    lightbox.addEventListener('click', () => {
+    const hideLightbox = () => {
         lightbox.classList.remove('active');
+    };
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target !== lightboxImg && e.target !== prevBtn && e.target !== nextBtn) {
+            hideLightbox();
+        }
     });
-});
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : galleryItems.length - 1;
+        showImage(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex < galleryItems.length - 1) ? currentIndex + 1 : 0;
+        showImage(currentIndex);
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.classList.contains('active')) {
+            if (e.key === 'ArrowLeft') {
+                prevBtn.click();
+            } else if (e.key === 'ArrowRight') {
+                nextBtn.click();
+            } else if (e.key === 'Escape') {
+                hideLightbox();
+            }
+        }
+    });
+});        
         </script>
 
     </section>
