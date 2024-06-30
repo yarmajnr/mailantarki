@@ -75,7 +75,7 @@
     document.addEventListener("DOMContentLoaded", function() {
         const newsData = [
         {
-    "title": "From Local Heroes to Global Stars: Mailantarki Care FC's Unprecedented Success",
+    "title": "Mailantarki players across the world!",
     "description": "In just one year of its existence, the ‘Mailantarki Care Football Club’ has transferred a total of 13 young and talented Nigerian players to various European clubs to continue their careers in football. Discover the inspiring journey of these rising stars.",
     "image": "https://github.com/yarmajnr/mailantarki/blob/main/IMG-20230816-WA0027.jpg?raw=true",
     "link": "article1.html"
@@ -89,7 +89,7 @@
             {
                 "title": "Mailantarki Care FC Wins 2022 Dana Cup",
                 "description": "The Mailantarki Care FC emerged as the champions of the 2022 Dana Cup International Youth Championship in Denmark. The Mailantarki lads were the only Nigerian club in that year’s Dana Cup and they produced an all-round unbeaten performance across their fixtures, scoring a record 40 goals. Emmanuel Micheal Papo scored the lone goal against Vibar FK of Norway in the final game at Nord Energy Arena Hjørring. Top performers included Miko Dalha, Abdulazeez Maiyadi, Auwal Abba, and young playmaker Ibrahim Sani. The team was expected in Oslo for the high-profile Norway Cup 2022.",
-                "image": "https://github.com/yarmajnr/mailantarki/blob/main/IMG-20231117-WA0160.jpg?raw=true",
+                "image": "https://periscopenga.com/wp-content/uploads/2022/08/IMG-20220806-WA0023.jpg?raw=true",
                 "link": "article3.html"
             }
         ];
@@ -312,7 +312,7 @@
         </div>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function() {
     const cards = document.querySelectorAll('.player-card');
     const modal = document.querySelector('#playerModal');
     const modalPlayerName = document.querySelector('#modalPlayerName');
@@ -348,8 +348,8 @@
         <h2>Gallery</h2>
         <div class="gallery-content">
             <div class="gallery-item">
-                <img src="gallery1.jpg" alt="Gallery Image 1">
-                <p class="caption">Caption for Gallery Image 1</p>
+                <img src="IMG-20230816-WA0030.jpg" alt="Gallery Image 1">
+                <p class="caption">Mailantarki Care In Training</p>
             </div>
             <div class="gallery-item">
                 <img src="gallery2.jpg" alt="Gallery Image 2">
@@ -374,127 +374,183 @@
             <button id="next-btn">&raquo;</button>
         </div>
     </div>
-        <script>
-        document.addEventListener('DOMContentLoaded', () => {
-    // Burger Menu Toggle
-    const burger = document.getElementById('burger');
-    const navList = document.getElementById('nav-list');
-
-    burger.addEventListener('click', () => {
-        navList.classList.toggle('nav-active');
-        burger.classList.toggle('toggle');
-    });
-
-    // Smooth Scroll
-    const navLinks = document.querySelectorAll('nav ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = e.target.getAttribute('href').substring(1);
-            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-        });
-    });
-
-    // News Carousel
-    const newsCarousel = document.getElementById('news-carousel');
-    const leftBtn = document.getElementById('left-btn');
-    const rightBtn = document.getElementById('right-btn');
-
-    let scrollPosition = 0;
-    const scrollAmount = 300;
-
-    rightBtn.addEventListener('click', () => {
-        newsCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        scrollPosition += scrollAmount;
-        toggleCarouselButtons();
-    });
-
-    leftBtn.addEventListener('click', () => {
-        newsCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        scrollPosition -= scrollAmount;
-        toggleCarouselButtons();
-    });
-
-    const toggleCarouselButtons = () => {
-        if (scrollPosition <= 0) {
-            leftBtn.disabled = true;
-        } else {
-            leftBtn.disabled = false;
+    
+    <style>
+        /* Gallery Section */
+        #gallery {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+            text-align: center;
         }
-
-        if (scrollPosition >= (newsCarousel.scrollWidth - newsCarousel.clientWidth)) {
-            rightBtn.disabled = true;
-        } else {
-            rightBtn.disabled = false;
+    
+        #gallery h2 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #003366;
         }
-    };
-
-    toggleCarouselButtons();
-
-    // Gallery Lightbox
-    const galleryItems = document.querySelectorAll('.gallery-item img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-
-    let currentIndex = 0;
-
-    const showImage = (index) => {
-        lightboxImg.src = galleryItems[index].src;
-        lightboxCaption.textContent = galleryItems[index].nextElementSibling.textContent;
-        lightbox.classList.add('active');
-        currentIndex = index;
-    };
-
-    galleryItems.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            showImage(index);
-        });
-    });
-
-    const hideLightbox = () => {
-        lightbox.classList.remove('active');
-    };
-
-    lightbox.addEventListener('click', (e) => {
-        if (e.target !== lightboxImg && e.target !== prevBtn && e.target !== nextBtn) {
-            hideLightbox();
+    
+        .gallery-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
         }
-    });
-
-    prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : galleryItems.length - 1;
-        showImage(currentIndex);
-    });
-
-    nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex < galleryItems.length - 1) ? currentIndex + 1 : 0;
-        showImage(currentIndex);
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (lightbox.classList.contains('active')) {
-            if (e.key === 'ArrowLeft') {
-                prevBtn.click();
-            } else if (e.key === 'ArrowRight') {
-                nextBtn.click();
-            } else if (e.key === 'Escape') {
-                hideLightbox();
+    
+        .gallery-item {
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+    
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+    
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    
+        .caption {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #003366;
+        }
+    
+        @media screen and (max-width: 768px) {
+            .gallery-item {
+                flex: 1 1 calc(50% - 20px);
             }
         }
-    });
-});        
-        </script>
+    
+        @media screen and (max-width: 480px) {
+            .gallery-item {
+                flex: 1 1 100%;
+            }
+        }
+    
+        /* Lightbox */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+    
+        #lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border: 5px solid #fff;
+            border-radius: 10px;
+        }
+    
+        #lightbox-caption {
+            color: white;
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+    
+        .lightbox-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+    
+        .lightbox-controls button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+    
+        .lightbox-controls button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Gallery Lightbox
+            const galleryItems = document.querySelectorAll('.gallery-item img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+    
+            let currentIndex = 0;
+    
+            const showImage = (index) => {
+                lightboxImg.src = galleryItems[index].src;
+                lightboxCaption.textContent = galleryItems[index].nextElementSibling.textContent;
+                lightbox.classList.add('active');
+                currentIndex = index;
+            };
+    
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    showImage(index);
+                });
+            });
+    
+            const hideLightbox = () => {
+                lightbox.classList.remove('active');
+            };
+    
+            lightbox.addEventListener('click', (e) => {
+                if (e.target !== lightboxImg && e.target !== prevBtn && e.target !== nextBtn) {
+                    hideLightbox();
+                }
+            });
+    
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : galleryItems.length - 1;
+                showImage(currentIndex);
+            });
+    
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex < galleryItems.length - 1) ? currentIndex + 1 : 0;
+                showImage(currentIndex);
+            });
+    
+            document.addEventListener('keydown', (e) => {
+                if (lightbox.classList.contains('active')) {
+                    if (e.key === 'ArrowLeft') {
+                        prevBtn.click();
+                    } else if (e.key === 'ArrowRight') {
+                        nextBtn.click();
+                    } else if (e.key === 'Escape') {
+                        hideLightbox();
+                    }
+                }
+            });
+        });
+    </script>
 
-    </section>
-    
-    <div id="lightbox">
-        <img id="lightbox-img" src="" alt="Lightbox Image">
-        <p id="lightbox-caption">Caption for Lightbox Image</p>
-    </div>
-    
 
     <section id="contact">
         <h2>Contact Us</h2>
