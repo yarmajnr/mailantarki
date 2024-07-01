@@ -74,11 +74,11 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const newsData = [
-        {
-    "title": "Mailantarki players across the world!",
-    "description": "In just one year of its existence, the ‘Mailantarki Care Football Club’ has transferred a total of 13 young and talented Nigerian players to various European clubs to continue their careers in football. Discover the inspiring journey of these rising stars.",
-    "image": "https://github.com/yarmajnr/mailantarki/blob/main/IMG-20230816-WA0027.jpg?raw=true",
-    "link": "article1.html"
+            {
+                "title": "Mailantarki players across the world!",
+                "description": "In just one year of its existence, the ‘Mailantarki Care Football Club’ has transferred a total of 13 young and talented Nigerian players to various European clubs to continue their careers in football. Discover the inspiring journey of these rising stars.",
+                "image": "bgeuros.png",
+                "link": "article1.html"
             },
             {
                 "title": "Title of the Second News Article",
@@ -89,7 +89,7 @@
             {
                 "title": "Mailantarki Care FC Wins 2022 Dana Cup",
                 "description": "The Mailantarki Care FC emerged as the champions of the 2022 Dana Cup International Youth Championship in Denmark. The Mailantarki lads were the only Nigerian club in that year’s Dana Cup and they produced an all-round unbeaten performance across their fixtures, scoring a record 40 goals. Emmanuel Micheal Papo scored the lone goal against Vibar FK of Norway in the final game at Nord Energy Arena Hjørring. Top performers included Miko Dalha, Abdulazeez Maiyadi, Auwal Abba, and young playmaker Ibrahim Sani. The team was expected in Oslo for the high-profile Norway Cup 2022.",
-                "image": "https://periscopenga.com/wp-content/uploads/2022/08/IMG-20220806-WA0023.jpg?raw=true",
+                "image": "danacup.jpg",
                 "link": "article3.html"
             }
         ];
@@ -133,175 +133,574 @@
 </script>
 
 
-    <section id="teams">
-        <h2>Our Teams</h2>
-        <div class="team-cards">
-            <div class="card">
-                <h3>Senior Team</h3>
-                <p>The senior team competes at the highest levels and includes some of the best talents in the region.</p>
-            </div>
-            <div class="card">
-                <h3>Youth Academy</h3>
-                <p>The Youth Academy nurtures the youngest players with a focus on skill development and love for the game.</p>
+<!-- Tabs Section -->
+<div class="tabs">
+    <button class="tab-button active" onclick="openTab('fixtures')">Fixtures</button>
+    <button class="tab-button" onclick="openTab('results')">Results</button>
+    <button class="tab-button" onclick="openTab('highlights')">Highlights</button>
+</div>
+
+<div class="tab-contents">
+    <div id="fixtures" class="tab-content active">
+        <div class="match">
+            <div class="match-date">Thu 25 Jul 2024</div>
+            <div class="match-league">NPFL</div>
+            <div class="match-teams">
+                <div class="team-container">
+                    <img src="mailantarkilogo.jpg" alt="Mailantarki Care F.C Logo" class="club-logo">
+                    <span class="team">Mailantarki</span>
+                </div>
+                <span class="score">03:00</span>
+                <div class="team-container">
+                    <img src="yarmalightlogo.png" alt="Yarmalight Logo" class="club-logo">
+                    <span class="team">Yarmalight</span>
+                </div>
             </div>
         </div>
-    </section>
+        <div class="match">
+            <div class="match-date">Sat 27 Jul 2024</div>
+            <div class="match-league">Nigerian League</div>
+            <div class="match-teams">
+                <div class="team-container">
+                    <img src="mailantarkilogo.jpg" alt="Mailantarki Care F.C Logo" class="club-logo">
+                    <span class="team">Mailantarki</span>
+                </div>
+                <span class="score">21:00</span>
+                <div class="team-container">
+                    <img src="domalogo.png" alt="Doma Logo" class="club-logo">
+                    <span class="team">Doma</span>
+                </div>
+            </div>
+        </div>
+        <!-- Add more match elements as needed -->
+    </div>
 
+    <div id="results" class="tab-content">
+        <div class="match">
+            <div class="match-date">Sun 19 May 2024</div>
+            <div class="match-league">Premier League</div>
+            <div class="match-teams">
+                <div class="team-container">
+                    <img src="mailantarkilogo.jpg" alt="Mailantarki Care F.C Logo" class="club-logo">
+                    <span class="team">Mailantarki</span>
+                </div>
+                <span class="score">2 - 1</span>
+                <div class="team-container">
+                    <img src="bournemouth-logo.png" alt="Bournemouth Logo" class="club-logo">
+                    <span class="team">Bournemouth</span>
+                </div>
+            </div>
+        </div>
+        <div class="match">
+            <div class="match-date">Thu 25 Jul 2024</div>
+            <div class="match-league">Friendly</div>
+            <div class="match-teams">
+                <div class="team-container">
+                    <img src="mailantarkilogo.jpg" alt="Mailantarki Care F.C Logo" class="club-logo">
+                    <span class="team">Mailantarki</span>
+                </div>
+                <span class="score">0 - 2</span>
+                <div class="team-container">
+                    <img src="wrexham-logo.png" alt="Wrexham Logo" class="club-logo">
+                    <span class="team">Wrexham</span>
+                </div>
+            </div>
+        </div>
+        <div class="match">
+            <div class="match-date">Sat 27 Jul 2024</div>
+            <div class="match-league">Friendly</div>
+            <div class="match-teams">
+                <div class="team-container">
+                    <img src="mailantarkilogo.jpg" alt="Mailantarki Care F.C Logo" class="club-logo">
+                    <span class="team">Mailantarki</span>
+                </div>
+                <span class="score">1 - 1</span>
+                <div class="team-container">
+                    <img src="domalogo.png" alt="Doma Logo" class="club-logo">
+                    <span class="team">Doma</span>
+                </div>
+            </div>
+        </div>
+        <!-- Add more match elements as needed -->
+    </div>
+
+    <div id="highlights" class="tab-content">
+        <div class="highlight">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/t5CAW3UKgYw?si=Tfb7ipQdBraadU8B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="caption">Highlight 1</div>
+        </div>
+        <div class="highlight">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/DFCLCRuhFYI?si=DFXlxJBwZMoS4fAY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="caption">Highlight 2</div>
+        </div>
+        <div class="highlight">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/DFCLCRuhFYI?si=DFXlxJBwZMoS4fAY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="caption">Highlight 3</div>
+        </div>
+    </div>
+    
+        
+
+        <!-- Add more highlight elements as needed -->
+    </div>
+</div>
+
+<!-- Arrows for scrolling within tab contents -->
+<div class="scroll-arrows">
+    <button class="scroll-arrow left" onclick="scrollLeft()">&#9664;</button>
+    <button class="scroll-arrow right" onclick="scrollRight()">&#9654;</button>
+</div>
+
+<script>
+function openTab(tabName) {
+    var i;
+    var x = document.getElementsByClassName("tab-content");
+    var buttons = document.getElementsByClassName("tab-button");
+    for (i = 0; i < x.length; i++) {
+        x[i].classList.remove("active");
+    }
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+    }
+    document.getElementById(tabName).classList.add("active");
+    document.querySelector(`button[onclick="openTab('${tabName}')"]`).classList.add("active");
+}
+
+function scrollLeft() {
+    const activeTab = document.querySelector('.tab-content.active');
+    activeTab.scrollBy({ left: -300, behavior: 'smooth' });
+}
+
+function scrollRight() {
+    const activeTab = document.querySelector('.tab-content.active');
+    activeTab.scrollBy({ left: 300, behavior: 'smooth' });
+}
+</script>
+
+<style>
+/* Tabs Section */
+.tabs {
+    background: url(tabbackgorund);
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tab-button {
+    background-color: #f8f9fa;
+    color: #005bb5;
+    padding: 10px 15px; /* Reduced padding */
+    margin: 0 2px; /* Reduced margin */
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: none;
+}
+
+.tab-button.active {
+    color: #0400ff;
+    background-color: rgb(245, 255, 58);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.tab-button:hover {
+    background-color: rgb(255, 255, 255);
+    transform: translateY(-2px);
+}
+
+.tab-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-content {
+    display: none;
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+.tab-content.active {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+.match, .highlight {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    flex: 0 0 30%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 300px; /* Fixed width for all boxes */
+    height: 300px; /* Fixed height for all boxes */
+}
+
+.highlight iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.match:hover, .highlight:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.match-date, .match-league, .caption {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.match-teams {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.team-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.club-logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+}
+
+.team {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.scroll-arrows {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 10px;
+}
+
+.scroll-arrow {
+    background-color: #005bb5;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px; /* Changed to square/rectangular form */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 20px;
+    margin: 0 5px; /* Close to each other */
+}
+
+.scroll-arrow:hover {
+    background-color: #004494;
+    transform: translateY(-2px);
+}
+
+/* Fixtures Section */
+.fixtures-section {
+    position: relative;
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: 'Verdana', sans-serif;
+}
+
+.fixtures-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.fixtures {
+    display: flex;
+    gap: 20px;
+}
+
+.fixture-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    text-align: center;
+}
+
+.fixture-date,
+.fixture-type {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.fixture-info {
+    display: flex;
+    align-items: center !important;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.club-info {
+    text-align: center;
+}
+
+.fixture-club-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.club-name {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.match-time {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.match-centre {
+    background-color: #0033cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.match-centre:hover {
+    background-color: #0022aa;
+}
+
+</style>
+
+
+
+<!--Players Section-->
     <section id="players">
         <h2>Players</h2>
-        
+    
         <!-- Coach -->
         <div class="player-category">
             <h3>Coach</h3>
             <div class="player-list">
                 <div class="player-card" data-details="Age: 50 | Country: Nigeria">
-                    <img src="coach.jpg" alt="Sulaiman Kalala">
-                    <h4>Labaran Nura Babisco</h4>
-                    <p>
-                        <img src="naija.png" alt="Spain" class="country-icon"> Nigeria
-                    </p>
+                    <img src="auwaluluegypt.jpg" alt="Labaran Nura Babisco" class="player-icon">
+                    <div class="player-info">
+                        <h4>Labaran Nura Babisco</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
                 </div>
             </div>
         </div>
-        
+    
         <!-- Keepers -->
         <div class="player-category">
             <h3>Keepers</h3>
             <div class="player-list">
                 <div class="player-card" data-details="Height: 6'2 | Age: 35 | Country: Nigeria">
-                    <img src="keeper1.jpg" alt="Abdulmumini Bashir">
-                    <h4>Abdulmumini Bashir</h4>
-                    <p>
-                        <img src="nigeria.png" alt="nigeria" class="country-icon"> Nigeria
-                    </p>
+                    <img src="auwaluluegypt.jpg" alt="Abdulmumini Bashir" class="player-icon">
+                    <div class="player-info">
+                        <h4>Abdulmumini Bashir</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
                 </div>
-                <div class="player-card" data-details="Height: 6'1 | Age: 28 | Country: Germany">
-                    <img src="keeper2.jpg" alt="Micheal Gabriel">
-                    <h4>Micheal Gabriel</h4>
-                    <p>
-                        <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
-                    </p>
+                <div class="player-card" data-details="Height: 6'1 | Age: 28 | Country: Nigeria">
+                    <img src="keeper2.jpg" alt="Micheal Gabriel" class="player-icon">
+                    <div class="player-info">
+                        <h4>Micheal Gabriel</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
                 </div>
             </div>
         </div>
-        
-        <!-- Defenders -->
-<div class="player-category">
-    <h3>Defenders</h3>
-    <div class="player-list">
-        <div class="player-card" data-details="Height: 5'10 | Age: 31 | Country: nigeria">
-            <img src="defender1.jpg" alt="Jabir Hassan">
-            <h4>Jabir Hassan</h4>
-            <p>
-                <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
-            </p>
-        </div>
-        <div class="player-card" data-details="Height: 6'2 | Age: 29 | Country: nigeria">
-            <img src="defender2.jpg" alt="Idrees Ashiru">
-            <h4>Idrees Ashiru</h4>
-            <p>
-                <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
-            </p>
-        </div>
-        <div class="player-card" data-details="Height: 6'0 | Age: 26 | Country: Nigeria">
-            <img src="defender3.jpg" alt="Daniel Izuchukwu">
-            <h4>Daniel Izuchukwu</h4>
-            <p>
-                <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
-            </p>
-        </div>
-        <div class="player-card" data-details="Height: 6'2 | Age: 26 | Country: Nigeria">
-            <img src="defender5.jpg" alt="Abdulbait Tijjani Bayo">
-            <h4>Abdulbait Tijjani Bayo</h4>
-            <p>
-                <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
-            </p>
-        </div>
-    </div>
-</div>
-
-        
-        <!-- Midfielders -->
-<div class="player-category">
-    <h3>Midfielders</h3>
-    <div class="player-list">
-        <div class="player-card" data-details="Height: 5'11 | Age: 30 | Country: Nigeria">
-            <img src="midfielder1.jpg" alt="Adamu Gambo">
-            <h4>Adamu Gambo</h4>
-            <p>
-                <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
-            </p>
-        </div>
-        <div class="player-card" data-details="Height: 5'9 | Age: 29 | Country: Nigeria">
-            <img src="midfielder2.jpg" alt="Miracle William">
-            <h4>Miracle William</h4>
-            <p>
-                <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
-            </p>
-        </div>
-        <div class="player-card" data-details="Height: 6'0 | Age: 24 | Country: Nigeria">
-            <img src="midfielder3.jpg" alt="Rodri">
-            <h4>Yuguda Ishaya</h4>
-            <p>
-                <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
-            </p>
-        </div>
-        <div class="player-card" data-details="Height: 5'11 | Age: 27 | Country: Nigeria">
-            <img src="midfielder4.jpg" alt="Salisu Lawan">
-            <h4>Salisu Lawan</h4>
-            <p>
-                <img src="nigeria.png" alt="nigeria" class="country-icon"> Nigeria
-            </p>
-        </div>
-        <div class="player-card" data-details="Height: 5'10 | Age: 30 | Country: Nigeria">
-            <img src="midfielder5.jpg" alt="Isa Muhammad">
-            <h4>Isa Muhammad</h4>
-            <p>
-                <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
-            </p>
-        </div>
-        <div class="player-card" data-details="Height: 6'1 | Age: 25 | Country: Nigeria">
-            <img src="midfielder6.jpg" alt="Sadiq Abdullahi">
-            <h4>Sadiq Abdullahi</h4>
-            <p>
-                <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
-            </p>
-        </div>
-    </div>
-</div>
-
-        
-        <!-- Attackers -->
-<div class="player-category">
-    <h3>Attackers</h3>
-    <div class="player-list">
-        <div class="player-card" data-details="Height: 5'8 | Age: 33 | Country: Nigeria">
-            <img src="messi.jpg" alt="Sadeeq M.B">
-            <h4>Sadeeq M.B</h4>
-            <p>
-                <img src="argentina.png" alt="Argentina" class="country-icon"> Nigeria
-            </p>
-        </div>
-        <div class="player-card" data-details="Height: 6'2 | Age: 35 | Country: Nigeria">
-            <img src="ronaldo.jpg" alt="Miko Dalha">
-            <h4>Miko Dalha</h4>
-            <p>
-                <img src="portugal.png" alt="Nigeria" class="country-icon"> Nigeria
-            </p>
-        </div>
-        <div class="player-card" data-details="Height: 5'10 | Age: 28 | Country: Nigeria">
-            <img src="neymar.jpg" alt="Auwal Abba Mane">
-            <h4>Auwal Abba Mane</h4>
-            <p>
-                <img src="brazil.png" alt="Nigeria" class="country-icon"> Nigeria
-            </p>
-        </div>
-    </div>
-</div>
-
-
-    </section>
     
+        <!-- Defenders -->
+        <div class="player-category">
+            <h3>Defenders</h3>
+            <div class="player-list">
+                <div class="player-card" data-details="Height: 5'10 | Age: 31 | Country: Nigeria">
+                    <img src="defender1.jpg" alt="Jabir Hassan" class="player-icon">
+                    <div class="player-info">
+                        <h4>Jabir Hassan</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 6'2 | Age: 29 | Country: Nigeria">
+                    <img src="defender2.jpg" alt="Idrees Ashiru" class="player-icon">
+                    <div class="player-info">
+                        <h4>Idrees Ashiru</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 6'0 | Age: 26 | Country: Nigeria">
+                    <img src="defender3.jpg" alt="Daniel Izuchukwu" class="player-icon">
+                    <div class="player-info">
+                        <h4>Daniel Izuchukwu</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 6'2 | Age: 26 | Country: Nigeria">
+                    <img src="defender5.jpg" alt="Abdulbait Tijjani Bayo" class="player-icon">
+                    <div class="player-info">
+                        <h4>Abdulbait Tijjani Bayo</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+        <!-- Midfielders -->
+        <div class="player-category">
+            <h3>Midfielders</h3>
+            <div class="player-list">
+                <div class="player-card" data-details="Height: 5'11 | Age: 30 | Country: Nigeria">
+                    <img src="midfielder1.jpg" alt="Adamu Gambo" class="player-icon">
+                    <div class="player-info">
+                        <h4>Adamu Gambo</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 5'9 | Age: 29 | Country: Nigeria">
+                    <img src="midfielder2.jpg" alt="Miracle William" class="player-icon">
+                    <div class="player-info">
+                        <h4>Miracle William</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 6'0 | Age: 24 | Country: Nigeria">
+                    <img src="midfielder3.jpg" alt="Yuguda Ishaya" class="player-icon">
+                    <div class="player-info">
+                        <h4>Yuguda Ishaya</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 5'11 | Age: 27 | Country: Nigeria">
+                    <img src="midfielder4.jpg" alt="Salisu Lawan" class="player-icon">
+                    <div class="player-info">
+                        <h4>Salisu Lawan</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 5'10 | Age: 30 | Country: Nigeria">
+                    <img src="midfielder5.jpg" alt="Isa Muhammad" class="player-icon">
+                    <div class="player-info">
+                        <h4>Isa Muhammad</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 6'1 | Age: 25 | Country: Nigeria">
+                    <img src="midfielder6.jpg" alt="Sadiq Abdullahi" class="player-icon">
+                    <div class="player-info">
+                        <h4>Sadiq Abdullahi</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+        <!-- Attackers -->
+        <div class="player-category">
+            <h3>Attackers</h3>
+            <div class="player-list">
+                <div class="player-card" data-details="Height: 5'8 | Age: 33 | Country: Nigeria">
+                    <img src="attacker1.jpg" alt="Sadeeq M.B" class="player-icon">
+                    <div class="player-info">
+                        <h4>Sadeeq M.B</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 6'2 | Age: 35 | Country: Nigeria">
+                    <img src="attacker2.jpg" alt="Miko Dalha" class="player-icon">
+                    <div class="player-info">
+                        <h4>Miko Dalha</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 5'10 | Age: 28 | Country: Nigeria">
+                    <img src="attacker3.jpg" alt="Auwal Abba Mane" class="player-icon">
+                    <div class="player-info">
+                        <h4>Auwal Abba Mane</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- Modal -->
     <div class="modal" id="playerModal">
@@ -311,38 +710,40 @@
             <p id="modalPlayerDetails"></p>
         </div>
     </div>
+    
     <script>
     document.addEventListener("DOMContentLoaded", function() {
-    const cards = document.querySelectorAll('.player-card');
-    const modal = document.querySelector('#playerModal');
-    const modalPlayerName = document.querySelector('#modalPlayerName');
-    const modalPlayerDetails = document.querySelector('#modalPlayerDetails');
-    const closeBtn = document.querySelector('.close-btn');
-
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            const playerName = card.querySelector('h4').innerText;
-            const playerDetails = card.getAttribute('data-details');
-
-            modalPlayerName.innerText = playerName;
-            modalPlayerDetails.innerText = playerDetails;
-
-            modal.style.display = 'flex';
+        const cards = document.querySelectorAll('.player-card');
+        const modal = document.querySelector('#playerModal');
+        const modalPlayerName = document.querySelector('#modalPlayerName');
+        const modalPlayerDetails = document.querySelector('#modalPlayerDetails');
+        const closeBtn = document.querySelector('.close-btn');
+    
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const playerName = card.querySelector('h4').innerText;
+                const playerDetails = card.getAttribute('data-details');
+    
+                modalPlayerName.innerText = playerName;
+                modalPlayerDetails.innerText = playerDetails;
+    
+                modal.style.display = 'flex';
+            });
+        });
+    
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
         });
     });
-
-    closeBtn.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-});
-
     </script>
+    
+
     
     <section id="gallery">
         <h2>Gallery</h2>
@@ -356,11 +757,19 @@
                 <p class="caption">Caption for Gallery Image 2</p>
             </div>
             <div class="gallery-item">
-                <img src="gallery3.jpg" alt="Gallery Image 3">
+                <img src="auwaluluegypt.jpg" alt="Gallery Image 3">
                 <p class="caption">Caption for Gallery Image 3</p>
             </div>
             <div class="gallery-item">
-                <img src="gallery4.jpg" alt="Gallery Image 4">
+                <img src="auwaluluegypt2.jpg" alt="Gallery Image 4">
+                <p class="caption">Caption for Gallery Image 4</p>
+            </div>
+            <div class="gallery-item">
+                <img src="redsquad.jpg" alt="Gallery Image 4">
+                <p class="caption">Caption for Gallery Image 4</p>
+            </div>
+            <div class="gallery-item">
+                <img src="auwaluluegypt2.jpg" alt="Gallery Image 4">
                 <p class="caption">Caption for Gallery Image 4</p>
             </div>
         </div>
@@ -384,7 +793,7 @@
         }
     
         #gallery h2 {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-size: 2rem;
             color: #003366;
         }
@@ -392,8 +801,8 @@
         .gallery-content {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            padding: 10px;
+            gap: 20px;
+            padding: 20px;
         }
     
         .gallery-item {
