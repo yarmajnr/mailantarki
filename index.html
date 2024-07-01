@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mailantarki Care Football Club</title>
     <link rel="stylesheet" href="styles.css">
@@ -41,16 +42,16 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const images = [
-                'image1.jpg',
-                'image2.jpg',
-                'image3.jpg',
-                'image4.jpg'
+                'https://leadership.ng/wp-content/uploads/2022/07/IMG-20220725-WA00121.jpg',
+                'https://github.com/yarmajnr/mailantarki/blob/main/IMG-20231117-WA0160.jpg?raw=true',
+                'https://periscopenga.com/wp-content/uploads/2022/08/IMG-20220806-WA0023.jpg',
+                'https://github.com/yarmajnr/mailantarki/blob/main/IMG-20230816-WA0030.jpg?raw=true'
             ];
             let currentIndex = 0;
             const heroSection = document.getElementById('hero');
     
             function changeBackgroundImage() {
-                heroSection.style.backgroundImage = `url('images/${images[currentIndex]}')`;
+                heroSection.style.backgroundImage = `url('${images[currentIndex]}')`;
                 currentIndex = (currentIndex + 1) % images.length;
             }
     
@@ -62,85 +63,1033 @@
         });
     </script>
 
+
 <section id="news">
-    <h2>News</h2>
-    <div class="news-content">
-        <p>Mailantarki Care Football Club is dedicated to fostering young talent and promoting the sport of football in our community. Established in [Year], we have a proud history of competitive success and community involvement.</p>
-        <p>Our mission is to develop well-rounded athletes who excel both on and off the field.</p>
+    <h2>Latest News</h2>
+    <div class="news-container" id="news-container">
+        <!-- News items will be dynamically inserted here -->
     </div>
 </section>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const paragraphs = document.querySelectorAll('.news-content p');
-        
-        paragraphs.forEach(paragraph => {
-            paragraph.addEventListener('mouseover', () => {
-                paragraph.style.backgroundColor = '#f0f0f0';
-            });
+        const newsData = [
+            {
+                "title": "Mailantarki players across the world!",
+                "description": "In just one year of its existence, the ‘Mailantarki Care Football Club’ has transferred a total of 13 young and talented Nigerian players to various European clubs to continue their careers in football. Discover the inspiring journey of these rising stars.",
+                "image": "bgeuros.png",
+                "link": "article1.html"
+            },
+            {
+                "title": "Title of the Second News Article",
+                "description": "Brief description of the second news article...",
+                "image": "https://github.com/yarmajnr/mailantarki/blob/main/IMG-20230816-WA0028.jpg?raw=true",
+                "link": "article2.html"
+            },
+            {
+                "title": "Mailantarki Care FC Wins 2022 Dana Cup",
+                "description": "The Mailantarki Care FC emerged as the champions of the 2022 Dana Cup International Youth Championship in Denmark. The Mailantarki lads were the only Nigerian club in that year’s Dana Cup and they produced an all-round unbeaten performance across their fixtures, scoring a record 40 goals. Emmanuel Micheal Papo scored the lone goal against Vibar FK of Norway in the final game at Nord Energy Arena Hjørring. Top performers included Miko Dalha, Abdulazeez Maiyadi, Auwal Abba, and young playmaker Ibrahim Sani. The team was expected in Oslo for the high-profile Norway Cup 2022.",
+                "image": "danacup.jpg",
+                "link": "article3.html"
+            }
+        ];
+
+        const newsContainer = document.getElementById('news-container');
+
+        newsData.forEach(news => {
+            const newsItem = document.createElement('div');
+            newsItem.className = 'news-item';
             
-            paragraph.addEventListener('mouseout', () => {
-                paragraph.style.backgroundColor = 'transparent';
-            });
+            const newsImage = document.createElement('img');
+            newsImage.src = news.image;
+            newsImage.alt = news.title;
+            
+            const newsDescription = document.createElement('div');
+            newsDescription.className = 'news-description';
+            
+            const newsTitle = document.createElement('h3');
+            newsTitle.textContent = news.title;
+            
+            const newsParagraph = document.createElement('p');
+            const maxLength = 200; // Approx. length for 6 lines
+            const truncatedDescription = news.description.length > maxLength ? news.description.substring(0, maxLength) + '... ' : news.description;
+            newsParagraph.textContent = truncatedDescription;
+            
+            const readMoreLink = document.createElement('a');
+            readMoreLink.href = news.link;
+            readMoreLink.className = 'read-more';
+            readMoreLink.textContent = 'Read more';
+            
+            newsDescription.appendChild(newsTitle);
+            newsDescription.appendChild(newsParagraph);
+            newsDescription.appendChild(readMoreLink);
+            
+            newsItem.appendChild(newsImage);
+            newsItem.appendChild(newsDescription);
+            
+            newsContainer.appendChild(newsItem);
         });
     });
 </script>
 
 
-    <section id="teams">
-        <h2>Our Teams</h2>
-        <div class="team-cards">
-            <div class="card">
-                <h3>Senior Team</h3>
-                <p>The senior team competes at the highest levels and includes some of the best talents in the region.</p>
-            </div>
-            <div class="card">
-                <h3>Youth Academy</h3>
-                <p>The Youth Academy nurtures the youngest players with a focus on skill development and love for the game.</p>
+<!-- Tabs Section -->
+<div class="tabs">
+    <button class="tab-button active" onclick="openTab('fixtures')">Fixtures</button>
+    <button class="tab-button" onclick="openTab('results')">Results</button>
+    <button class="tab-button" onclick="openTab('highlights')">Highlights</button>
+</div>
+
+<div class="tab-contents">
+    <div id="fixtures" class="tab-content active">
+        <div class="match">
+            <div class="match-date">Thu 25 Jul 2024</div>
+            <div class="match-league">NPFL</div>
+            <div class="match-teams">
+                <div class="team-container">
+                    <img src="mailantarkilogo.jpg" alt="Mailantarki Care F.C Logo" class="club-logo">
+                    <span class="team">Mailantarki</span>
+                </div>
+                <span class="score">03:00</span>
+                <div class="team-container">
+                    <img src="yarmalightlogo.png" alt="Yarmalight Logo" class="club-logo">
+                    <span class="team">Yarmalight</span>
+                </div>
             </div>
         </div>
-    </section>
+        <div class="match">
+            <div class="match-date">Sat 27 Jul 2024</div>
+            <div class="match-league">Nigerian League</div>
+            <div class="match-teams">
+                <div class="team-container">
+                    <img src="mailantarkilogo.jpg" alt="Mailantarki Care F.C Logo" class="club-logo">
+                    <span class="team">Mailantarki</span>
+                </div>
+                <span class="score">21:00</span>
+                <div class="team-container">
+                    <img src="domalogo.png" alt="Doma Logo" class="club-logo">
+                    <span class="team">Doma</span>
+                </div>
+            </div>
+        </div>
+        <!-- Add more match elements as needed -->
+    </div>
 
+    <div id="results" class="tab-content">
+        <div class="match">
+            <div class="match-date">Sun 19 May 2024</div>
+            <div class="match-league">Premier League</div>
+            <div class="match-teams">
+                <div class="team-container">
+                    <img src="mailantarkilogo.jpg" alt="Mailantarki Care F.C Logo" class="club-logo">
+                    <span class="team">Mailantarki</span>
+                </div>
+                <span class="score">2 - 1</span>
+                <div class="team-container">
+                    <img src="bournemouth-logo.png" alt="Bournemouth Logo" class="club-logo">
+                    <span class="team">Bournemouth</span>
+                </div>
+            </div>
+        </div>
+        <div class="match">
+            <div class="match-date">Thu 25 Jul 2024</div>
+            <div class="match-league">Friendly</div>
+            <div class="match-teams">
+                <div class="team-container">
+                    <img src="mailantarkilogo.jpg" alt="Mailantarki Care F.C Logo" class="club-logo">
+                    <span class="team">Mailantarki</span>
+                </div>
+                <span class="score">0 - 2</span>
+                <div class="team-container">
+                    <img src="wrexham-logo.png" alt="Wrexham Logo" class="club-logo">
+                    <span class="team">Wrexham</span>
+                </div>
+            </div>
+        </div>
+        <div class="match">
+            <div class="match-date">Sat 27 Jul 2024</div>
+            <div class="match-league">Friendly</div>
+            <div class="match-teams">
+                <div class="team-container">
+                    <img src="mailantarkilogo.jpg" alt="Mailantarki Care F.C Logo" class="club-logo">
+                    <span class="team">Mailantarki</span>
+                </div>
+                <span class="score">1 - 1</span>
+                <div class="team-container">
+                    <img src="domalogo.png" alt="Doma Logo" class="club-logo">
+                    <span class="team">Doma</span>
+                </div>
+            </div>
+        </div>
+        <!-- Add more match elements as needed -->
+    </div>
+
+    <div id="highlights" class="tab-content">
+        <div class="highlight">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/t5CAW3UKgYw?si=Tfb7ipQdBraadU8B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="caption">Highlight 1</div>
+        </div>
+        <div class="highlight">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/DFCLCRuhFYI?si=DFXlxJBwZMoS4fAY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="caption">Highlight 2</div>
+        </div>
+        <div class="highlight">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/DFCLCRuhFYI?si=DFXlxJBwZMoS4fAY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="caption">Highlight 3</div>
+        </div>
+    </div>
+    
+        
+
+        <!-- Add more highlight elements as needed -->
+    </div>
+</div>
+
+<!-- Arrows for scrolling within tab contents -->
+<div class="scroll-arrows">
+    <button class="scroll-arrow left" onclick="scrollLeft()">&#9664;</button>
+    <button class="scroll-arrow right" onclick="scrollRight()">&#9654;</button>
+</div>
+
+<script>
+function openTab(tabName) {
+    var i;
+    var x = document.getElementsByClassName("tab-content");
+    var buttons = document.getElementsByClassName("tab-button");
+    for (i = 0; i < x.length; i++) {
+        x[i].classList.remove("active");
+    }
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+    }
+    document.getElementById(tabName).classList.add("active");
+    document.querySelector(`button[onclick="openTab('${tabName}')"]`).classList.add("active");
+}
+
+function scrollLeft() {
+    const activeTab = document.querySelector('.tab-content.active');
+    activeTab.scrollBy({ left: -300, behavior: 'smooth' });
+}
+
+function scrollRight() {
+    const activeTab = document.querySelector('.tab-content.active');
+    activeTab.scrollBy({ left: 300, behavior: 'smooth' });
+}
+</script>
+
+<style>
+/* Tabs Section */
+.tabs {
+    background: url(tabbackgorund);
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tab-button {
+    background-color: #f8f9fa;
+    color: #005bb5;
+    padding: 10px 15px; /* Reduced padding */
+    margin: 0 2px; /* Reduced margin */
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: none;
+}
+
+.tab-button.active {
+    color: #0400ff;
+    background-color: rgb(245, 255, 58);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.tab-button:hover {
+    background-color: rgb(255, 255, 255);
+    transform: translateY(-2px);
+}
+
+.tab-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-content {
+    display: none;
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+.tab-content.active {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+.match, .highlight {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    flex: 0 0 30%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 300px; /* Fixed width for all boxes */
+    height: 300px; /* Fixed height for all boxes */
+}
+
+.highlight iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.match:hover, .highlight:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.match-date, .match-league, .caption {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.match-teams {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.team-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.club-logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+}
+
+.team {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.scroll-arrows {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 10px;
+}
+
+.scroll-arrow {
+    background-color: #005bb5;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px; /* Changed to square/rectangular form */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 20px;
+    margin: 0 5px; /* Close to each other */
+}
+
+.scroll-arrow:hover {
+    background-color: #004494;
+    transform: translateY(-2px);
+}
+
+/* Fixtures Section */
+.fixtures-section {
+    position: relative;
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: 'Verdana', sans-serif;
+}
+
+.fixtures-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.fixtures {
+    display: flex;
+    gap: 20px;
+}
+
+.fixture-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    text-align: center;
+}
+
+.fixture-date,
+.fixture-type {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.fixture-info {
+    display: flex;
+    align-items: center !important;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.club-info {
+    text-align: center;
+}
+
+.fixture-club-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.club-name {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.match-time {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.match-centre {
+    background-color: #0033cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.match-centre:hover {
+    background-color: #0022aa;
+}
+
+</style>
+
+
+
+<!--Players Section-->
     <section id="players">
-        <h2>Match players</h2>
-        <div class="players-content">
-            <ul>
-                <li>June 30, 2024 - Mailantarki vs Doma United</li>
-                <li>July 15, 2024 - Mailantarki vs Gombe United</li>
-                <li>August 5, 2024 - Mailantarki vs Yarmalight F.C</li>
-                <li>August 20, 2024 - Mailantarki vs Team D</li>
-            </ul>
+        <h2>Players</h2>
+    
+        <!-- Coach -->
+        <div class="player-category">
+            <h3>Coach</h3>
+            <div class="player-list">
+                <div class="player-card" data-details="Age: 50 | Country: Nigeria">
+                    <img src="auwaluluegypt.jpg" alt="Labaran Nura Babisco" class="player-icon">
+                    <div class="player-info">
+                        <h4>Labaran Nura Babisco</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+        <!-- Keepers -->
+        <div class="player-category">
+            <h3>Keepers</h3>
+            <div class="player-list">
+                <div class="player-card" data-details="Height: 6'2 | Age: 35 | Country: Nigeria">
+                    <img src="auwaluluegypt.jpg" alt="Abdulmumini Bashir" class="player-icon">
+                    <div class="player-info">
+                        <h4>Abdulmumini Bashir</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 6'1 | Age: 28 | Country: Nigeria">
+                    <img src="keeper2.jpg" alt="Micheal Gabriel" class="player-icon">
+                    <div class="player-info">
+                        <h4>Micheal Gabriel</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+        <!-- Defenders -->
+        <div class="player-category">
+            <h3>Defenders</h3>
+            <div class="player-list">
+                <div class="player-card" data-details="Height: 5'10 | Age: 31 | Country: Nigeria">
+                    <img src="defender1.jpg" alt="Jabir Hassan" class="player-icon">
+                    <div class="player-info">
+                        <h4>Jabir Hassan</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 6'2 | Age: 29 | Country: Nigeria">
+                    <img src="defender2.jpg" alt="Idrees Ashiru" class="player-icon">
+                    <div class="player-info">
+                        <h4>Idrees Ashiru</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 6'0 | Age: 26 | Country: Nigeria">
+                    <img src="defender3.jpg" alt="Daniel Izuchukwu" class="player-icon">
+                    <div class="player-info">
+                        <h4>Daniel Izuchukwu</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 6'2 | Age: 26 | Country: Nigeria">
+                    <img src="defender5.jpg" alt="Abdulbait Tijjani Bayo" class="player-icon">
+                    <div class="player-info">
+                        <h4>Abdulbait Tijjani Bayo</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+        <!-- Midfielders -->
+        <div class="player-category">
+            <h3>Midfielders</h3>
+            <div class="player-list">
+                <div class="player-card" data-details="Height: 5'11 | Age: 30 | Country: Nigeria">
+                    <img src="midfielder1.jpg" alt="Adamu Gambo" class="player-icon">
+                    <div class="player-info">
+                        <h4>Adamu Gambo</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 5'9 | Age: 29 | Country: Nigeria">
+                    <img src="midfielder2.jpg" alt="Miracle William" class="player-icon">
+                    <div class="player-info">
+                        <h4>Miracle William</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 6'0 | Age: 24 | Country: Nigeria">
+                    <img src="midfielder3.jpg" alt="Yuguda Ishaya" class="player-icon">
+                    <div class="player-info">
+                        <h4>Yuguda Ishaya</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 5'11 | Age: 27 | Country: Nigeria">
+                    <img src="midfielder4.jpg" alt="Salisu Lawan" class="player-icon">
+                    <div class="player-info">
+                        <h4>Salisu Lawan</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 5'10 | Age: 30 | Country: Nigeria">
+                    <img src="midfielder5.jpg" alt="Isa Muhammad" class="player-icon">
+                    <div class="player-info">
+                        <h4>Isa Muhammad</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 6'1 | Age: 25 | Country: Nigeria">
+                    <img src="midfielder6.jpg" alt="Sadiq Abdullahi" class="player-icon">
+                    <div class="player-info">
+                        <h4>Sadiq Abdullahi</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+        <!-- Attackers -->
+        <div class="player-category">
+            <h3>Attackers</h3>
+            <div class="player-list">
+                <div class="player-card" data-details="Height: 5'8 | Age: 33 | Country: Nigeria">
+                    <img src="attacker1.jpg" alt="Sadeeq M.B" class="player-icon">
+                    <div class="player-info">
+                        <h4>Sadeeq M.B</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 6'2 | Age: 35 | Country: Nigeria">
+                    <img src="attacker2.jpg" alt="Miko Dalha" class="player-icon">
+                    <div class="player-info">
+                        <h4>Miko Dalha</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="player-card" data-details="Height: 5'10 | Age: 28 | Country: Nigeria">
+                    <img src="attacker3.jpg" alt="Auwal Abba Mane" class="player-icon">
+                    <div class="player-info">
+                        <h4>Auwal Abba Mane</h4>
+                        <p>
+                            <img src="nigeria.png" alt="Nigeria" class="country-icon"> Nigeria
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
     </section>
+    
+    <!-- Modal -->
+    <div class="modal" id="playerModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalPlayerName"></h2>
+            <p id="modalPlayerDetails"></p>
+        </div>
+    </div>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const cards = document.querySelectorAll('.player-card');
+        const modal = document.querySelector('#playerModal');
+        const modalPlayerName = document.querySelector('#modalPlayerName');
+        const modalPlayerDetails = document.querySelector('#modalPlayerDetails');
+        const closeBtn = document.querySelector('.close-btn');
+    
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const playerName = card.querySelector('h4').innerText;
+                const playerDetails = card.getAttribute('data-details');
+    
+                modalPlayerName.innerText = playerName;
+                modalPlayerDetails.innerText = playerDetails;
+    
+                modal.style.display = 'flex';
+            });
+        });
+    
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+    </script>
+    
 
+    
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery-content">
-            <div class="gallery-item"><img src="gallery1.jpg" alt="Gallery Image 1"></div>
-            <div class="gallery-item"><img src="gallery2.jpg" alt="Gallery Image 2"></div>
-            <div class="gallery-item"><img src="gallery3.jpg" alt="Gallery Image 3"></div>
-            <div class="gallery-item"><img src="gallery4.jpg" alt="Gallery Image 4"></div>
+            <div class="gallery-item">
+                <img src="IMG-20230816-WA0030.jpg" alt="Gallery Image 1">
+                <p class="caption">Mailantarki Care In Training</p>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery2.jpg" alt="Gallery Image 2">
+                <p class="caption">Caption for Gallery Image 2</p>
+            </div>
+            <div class="gallery-item">
+                <img src="auwaluluegypt.jpg" alt="Gallery Image 3">
+                <p class="caption">Caption for Gallery Image 3</p>
+            </div>
+            <div class="gallery-item">
+                <img src="auwaluluegypt2.jpg" alt="Gallery Image 4">
+                <p class="caption">Caption for Gallery Image 4</p>
+            </div>
+            <div class="gallery-item">
+                <img src="redsquad.jpg" alt="Gallery Image 4">
+                <p class="caption">Caption for Gallery Image 4</p>
+            </div>
+            <div class="gallery-item">
+                <img src="auwaluluegypt2.jpg" alt="Gallery Image 4">
+                <p class="caption">Caption for Gallery Image 4</p>
+            </div>
         </div>
     </section>
+    
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Lightbox Image">
+        <p id="lightbox-caption">Caption for Lightbox Image</p>
+        <div class="lightbox-controls">
+            <button id="prev-btn">&laquo;</button>
+            <button id="next-btn">&raquo;</button>
+        </div>
+    </div>
+    
+    <style>
+        /* Gallery Section */
+        #gallery {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+            text-align: center;
+        }
+    
+        #gallery h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #003366;
+        }
+    
+        .gallery-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+    
+        .gallery-item {
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+    
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+    
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    
+        .caption {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #003366;
+        }
+    
+        @media screen and (max-width: 768px) {
+            .gallery-item {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+    
+        @media screen and (max-width: 480px) {
+            .gallery-item {
+                flex: 1 1 100%;
+            }
+        }
+    
+        /* Lightbox */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+    
+        #lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border: 5px solid #fff;
+            border-radius: 10px;
+        }
+    
+        #lightbox-caption {
+            color: white;
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+    
+        .lightbox-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+    
+        .lightbox-controls button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+    
+        .lightbox-controls button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Gallery Lightbox
+            const galleryItems = document.querySelectorAll('.gallery-item img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+    
+            let currentIndex = 0;
+    
+            const showImage = (index) => {
+                lightboxImg.src = galleryItems[index].src;
+                lightboxCaption.textContent = galleryItems[index].nextElementSibling.textContent;
+                lightbox.classList.add('active');
+                currentIndex = index;
+            };
+    
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    showImage(index);
+                });
+            });
+    
+            const hideLightbox = () => {
+                lightbox.classList.remove('active');
+            };
+    
+            lightbox.addEventListener('click', (e) => {
+                if (e.target !== lightboxImg && e.target !== prevBtn && e.target !== nextBtn) {
+                    hideLightbox();
+                }
+            });
+    
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : galleryItems.length - 1;
+                showImage(currentIndex);
+            });
+    
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex < galleryItems.length - 1) ? currentIndex + 1 : 0;
+                showImage(currentIndex);
+            });
+    
+            document.addEventListener('keydown', (e) => {
+                if (lightbox.classList.contains('active')) {
+                    if (e.key === 'ArrowLeft') {
+                        prevBtn.click();
+                    } else if (e.key === 'ArrowRight') {
+                        nextBtn.click();
+                    } else if (e.key === 'Escape') {
+                        hideLightbox();
+                    }
+                }
+            });
+        });
+    </script>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-content">
-            <form action="#" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-content">
+        <div class="envelope">
+            <form action="https://formspree.io/f/xkgwnjnd" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
                 <button type="submit" class="btn-yellow">Send Message</button>
             </form>
         </div>
-    </section>
+    </div>
+</section>
 
+<script>
+    // Contact Form Submission
+    const contactForm = document.querySelector('#contact form');
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Thank you for your message!');
+                contactForm.reset();
+            } else {
+                alert('Oops! There was a problem submitting your form');
+            }
+        })
+        .catch(error => {
+            alert('Oops! There was a problem submitting your form');
+        });
+    });
+</script>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+    // Burger Menu Toggle
+    const burger = document.getElementById('burger');
+    const navList = document.getElementById('nav-list');
+
+    burger.addEventListener('click', () => {
+        navList.classList.toggle('nav-active');
+        burger.classList.toggle('toggle');
+    });
+
+    // Smooth Scroll
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = e.target.getAttribute('href').substring(1);
+            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // News Carousel
+    const newsCarousel = document.getElementById('news-carousel');
+    const leftBtn = document.getElementById('left-btn');
+    const rightBtn = document.getElementById('right-btn');
+
+    let scrollPosition = 0;
+    const scrollAmount = 300;
+
+    rightBtn.addEventListener('click', () => {
+        newsCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        scrollPosition += scrollAmount;
+        toggleCarouselButtons();
+    });
+
+    leftBtn.addEventListener('click', () => {
+        newsCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        scrollPosition -= scrollAmount;
+        toggleCarouselButtons();
+    });
+
+    const toggleCarouselButtons = () => {
+        if (scrollPosition <= 0) {
+            leftBtn.disabled = true;
+        } else {
+            leftBtn.disabled = false;
+        }
+
+        if (scrollPosition >= (newsCarousel.scrollWidth - newsCarousel.clientWidth)) {
+            rightBtn.disabled = true;
+        } else {
+            rightBtn.disabled = false;
+        }
+    };
+
+    toggleCarouselButtons();
+
+    // Gallery Lightbox
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            lightboxImg.src = e.target.src;
+            lightboxCaption.textContent = e.target.nextElementSibling.textContent;
+            lightbox.classList.add('active');
+        });
+    });
+
+    lightbox.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+});
+
+        </script>
+
+    </section>
+    
     <footer>
         <div class="footer-content">
             <div class="quick-links">
