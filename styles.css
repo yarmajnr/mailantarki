@@ -11,6 +11,27 @@ body {
     color: #3725B9;
 }
 
+/* Custom Scrollbar Styles */
+body::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+    background: #0400ff; /* Color of the track */
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: #f6ff00; /* Color of the handle */
+    border-radius: 6px; /* Rounded corners for the handle */
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+    background: #000000; /* Darker color on hover */
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -204,144 +225,239 @@ nav ul li a:hover {
     }
 }
 
-/* Teams Section */
-#teams {
-    background-color: #f9f9f9;
-    color: #3725B9;
-    padding: 50px 20px;
-    text-align: center;
+/* Tabs Section */
+
+
+/* Smooth Scrollbar */
+.tab-content {
+    scrollbar-width: thin;
+    scrollbar-color: #0072ce #f8f9fa;
 }
 
-.team-cards {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.tab-content::-webkit-scrollbar {
+    height: 8px;
 }
 
-.team-cards .card {
-    background: white;
-    margin: 10px;
-    padding: 20px;
-    max-width: 300px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+.tab-content::-webkit-scrollbar-track {
+    background: #f8f9fa;
+    border-radius: 8px;
 }
 
-.team-cards .card:hover {
-    transform: scale(1.05);
+.tab-content::-webkit-scrollbar-thumb {
+    background-color: #0072ce;
+    border-radius: 8px;
+    border: 2px solid #f8f9fa;
+    transition: background-color 0.3s;
 }
 
-/* Players section */
+.tab-content::-webkit-scrollbar-thumb:hover {
+    background-color: #005bb5;
+}
+
+
+
+
+
+/* Players Section */
+
 #players {
+    background-color: #ffffff;
+    font-family: Verdana, sans-serif;
     padding: 20px;
-    background-color: #ffffff; /* White background */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #005bb5; /* Blue color */
 }
 
 .player-category {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
-.player-category h3 {
+h3 {
     font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #3725B9; /* Blue color for headings */
+    color: #005bb5; /* Blue color */
+    border-bottom: 2px solid #f5ff3a; /* Yellow color */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .player-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
 }
 
 .player-card {
-    background: #f4f4f4; /* Light gray background */
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #7c7a7a; /* Blue color */
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: calc(50% - 10px); /* Two players per row with 10px gap */
     padding: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s;
+    cursor: pointer;
+    color: #000000;
+}
+
+.player-card img.player-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.player-card .player-info h4 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.player-card .player-info p {
+    font-size: 0.9em;
+    color: #000000; /* Yellow color */
+    margin-bottom: 0;
+}
+
+.player-card img.country-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 5px;
 }
 
 .player-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transform: scale(1.05);
 }
 
-.player-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.player-card h4 {
-    margin: 10px 0;
-    font-size: 1.2em;
-    color: #333333; /* Dark gray color for text */
-}
-
-.player-card p {
-    display: flex;
-    align-items: center;
-    color: #666666; /* Medium gray color for text */
-    margin: 5px 0;
-}
-
-.country-icon {
-    width: 2px;
-    height: 2px;
-    margin-right: 2px;
-}
-
-
-/* Modal */
+/* Styles for the modal container */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
+/* Modal content */
 .modal-content {
-    background-color: #fff;
-    color: #000;
-    margin: auto;
+    background-color: #fff; /* White color */
+    margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    max-width: 500px;
-    border-radius: 10px;
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     position: relative;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
 }
 
+/* Close button */
 .close-btn {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .close-btn:hover,
 .close-btn:focus {
     color: #ff0000;
     text-decoration: none;
-    cursor: pointer;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    .player-card {
-        width: calc(100% - 10px); /* One player per row */
+/* Modal title */
+#modalPlayerName {
+    margin-top: 0;
+    font-size: 24px;
+    color: #005bb5; /* Blue color */
+}
+
+/* Modal content text */
+#modalPlayerDetails {
+    color: #333;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Close button hover effect */
+.close-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Modal close animation */
+.modal-close-animation {
+    animation: modalCloseAnimation 0.3s ease forwards;
+}
+
+@keyframes modalCloseAnimation {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
     }
 }
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+        padding: 15px;
+    }
+
+    .close-btn {
+        font-size: 24px;
+    }
+
+    #modalPlayerName {
+        font-size: 20px;
+    }
+
+    #modalPlayerDetails {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .modal-content {
+        width: 90%;
+        margin: 30% auto;
+        padding: 10px;
+    }
+
+    .close-btn {
+        font-size: 22px;
+    }
+
+    #modalPlayerName {
+        font-size: 18px;
+    }
+
+    #modalPlayerDetails {
+        font-size: 14px;
+    }
+}
+
+
+
 
 
 /* Contact Section */
