@@ -1,12 +1,26 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Burger Menu Toggle
-    const burger = document.getElementById('burger');
-    const navList = document.getElementById('nav-list');
+    document.addEventListener('DOMContentLoaded', () => {
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
 
-    burger.addEventListener('click', () => {
-        navList.classList.toggle('nav-active');
-        burger.classList.toggle('toggle');
+        burger.addEventListener('click', () => {
+            // Toggle Nav
+            nav.classList.toggle('nav-active');
+
+            // Animate Links
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+
+            // Burger Animation
+            burger.classList.toggle('toggle');
+        });
     });
+
 
     // Smooth Scroll
     const navLinks = document.querySelectorAll('nav ul li a');
@@ -17,12 +31,3 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
         });
     });
-
-     // Contact Form Submission
-    const contactForm = document.querySelector('#contact form');
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Thank you for your message!');
-        contactForm.reset();
-    });
-});
